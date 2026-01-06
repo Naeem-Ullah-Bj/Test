@@ -1,4 +1,4 @@
-<script>
+
 (function () {
   "use strict";
 alert():
@@ -38,6 +38,7 @@ alert():
   function initPosts() {
     const posts = document.querySelectorAll(".post, article, .blog-post");
     posts.forEach(applyOverlay);
+    
   }
 
   function observePosts() {
@@ -61,4 +62,4 @@ alert():
   }
 alert('1235');
 })();
-</script>
+
