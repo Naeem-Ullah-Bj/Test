@@ -1,5 +1,4 @@
-<script type='text/javascript'>  
-//<![CDATA[  
+ 
 (function(){  
 var days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];  
   
@@ -155,5 +154,3 @@ var postsData=initPosts();
 if(postsData)handleLoadMore(postsData.hiddenPosts);  
   
 })();  
-//]]>  
-</script>
