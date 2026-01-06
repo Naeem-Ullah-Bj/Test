@@ -1,63 +1,59 @@
+(function(){  
 
-(function () {
-  "use strict";
-alert();
-  const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+alert("A: script start");
 
-  function formatDate(date) {
-    return ("0" + date.getDate()).slice(-2) + "/" +
-           ("0" + (date.getMonth() + 1)).slice(-2) + "/" +
-           date.getFullYear();
-  }
+var days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];  
 
-  function addHomepageDate(box, dateObj) {
-    if (!box || box.querySelector(".thumbnail-date-overlay")) return;
+alert("B: vars loaded");
 
-    const div = document.createElement("div");
-    div.className = "thumbnail-date-overlay";
-    div.textContent = formatDate(dateObj);
+function addHomepageDate(box,dateObj){  
+  alert("addHomepageDate called");
+}  
 
-    box.style.position = "relative";
-    box.appendChild(div);
-  }
+function lastDayDate(day){  
+  alert("lastDayDate called");
+}  
 
-  function applyOverlay(post) {
-    if (!post) return;
+function formatDate(date){  
+  alert("formatDate called");
+  return("0"+date.getDate()).slice(-2)+"/"+("0"+(date.getMonth()+1)).slice(-2)+"/"+date.getFullYear();  
+}  
 
-    const thumb = post.querySelector(".post-thumbnail, .thumbnail, img");
-    if (!thumb) return;
+function numbers(day,mtp){  
+  alert("numbers called");
+}  
 
-    const dateAttr =
-      post.getAttribute("data-date") ||
-      post.querySelector("time")?.getAttribute("datetime");
+function overlayNumbers(box,nums,dayName,dateStr,mtp,smallSet){  
+  alert("overlayNumbers called");
+}  
 
-    const dateObj = dateAttr ? new Date(dateAttr) : new Date();
-    addHomepageDate(thumb.parentElement || post, dateObj);
-  }
+function applyOverlay(post){  
+  alert("applyOverlay called");
+}  
 
-  function initPosts() {
-    const posts = document.querySelectorAll(".post, article, .blog-post");
-    posts.forEach(applyOverlay);
-  }
+function sortValue(post){  
+  alert("sortValue called");
+}  
 
-  function observePosts() {
-    const observer = new MutationObserver(() => initPosts());
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-  }
+function initPosts(){  
+  alert("initPosts called");
+}  
 
-  function init() {
-    initPosts();
-    observePosts();
-  }
+function handleLoadMore(hiddenPosts){  
+  alert("handleLoadMore called");
+}  
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
+alert("C: before initPosts");
+
+var postsData=initPosts();  
+
+alert("D: after initPosts");
+
+if(postsData){
+  alert("E: before handleLoadMore");
+  handleLoadMore(postsData.hiddenPosts);  
+}
+
+alert("F: script end");
 
 })();
-alert('ty');
