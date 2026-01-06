@@ -1,7 +1,7 @@
 
 (function () {
   "use strict";
-
+alert():
   const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
   function formatDate(date) {
@@ -51,6 +51,7 @@
   function init() {
     initPosts();
     observePosts();
+    
   }
 
   if (document.readyState === "loading") {
@@ -58,5 +59,5 @@
   } else {
     init();
   }
-
+alert('1235');
 })();
